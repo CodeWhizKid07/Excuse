@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate smart excuses for any situation with our AI-powered excuse generator. Perfect for work, school, or personal life.">
+    <meta name="keywords" content="excuse generator, smart excuses, work excuses, school excuses, AI excuses">
+    <meta name="author" content="Smart Excuse Generator">
+    <meta property="og:title" content="Smart Excuse Generator - AI-Powered Excuses for Any Situation">
+    <meta property="og:description" content="Generate perfect excuses instantly for work, school, or personal life.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourexcusegenerator.com">
+    <meta property="og:image" content="https://yourexcusegenerator.com/images/excuse-generator-og.jpg">
+    
+    <title>Smart Excuse Generator - AI-Powered Excuses for Any Situation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #ff6b6b;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7ff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .generator-section {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+        }
+        
+        .ad-section {
+            width: 300px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .ad-container {
+            margin-bottom: 20px;
+            width: 100%;
+            min-height: 250px;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: var(--border-radius);
+        }
+        
+        .ad-label {
+            font-size: 12px;
+            color: #777;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        select, input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 107, 255, 0.2);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: #f0f4ff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .checkbox-item input {
+            width: auto;
+            margin-right: 8px;
+        }
+        
+        .checkbox-item:hover {
+            background: #e0e8ff;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3a5bef;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #ff5252;
+        }
+        
+        .result-container {
+            margin-top: 30px;
+            background: #f8f9ff;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px dashed #ccc;
+            min-height: 150px;
+        }
+        
+        .result-container h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .excuse-result {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 14px;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .ad-section {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            
+            .ad-container {
+                width: calc(50% - 15px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .ad-section {
+                flex-direction: column;
+            }
+            
+            .ad-container {
+                width: 100%;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-comment-dots"></i>
+                    ExcuseGen
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Excuse Generator</h1>
+            <p>Generate the perfect excuse for any situation in seconds. Whether it's for work, school, or personal life, we've got you covered.</p>
+            <a href="#generator" class="btn btn-secondary">Try It Now</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <div class="main-content">
+            <section class="generator-section" id="generator">
+                <h2>Generate Your Excuse</h2>
+                <form id="excuseForm">
+                    <div class="form-group">
+                        <label for="excuseType">Type of Excuse</label>
+                        <select id="excuseType" required>
+                            <option value="">Select an excuse type</option>
+                            <option value="work">Work/Professional</option>
+                            <option value="school">School/Education</option>
+                            <option value="personal">Personal/Family</option>
+                            <option value="technical">Technical Issues</option>
+                            <option value="health">Health/Medical</option>
+                            <option value="transport">Transportation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recipient">Recipient (Optional)</label>
+                        <input type="text" id="recipient" placeholder="e.g., Boss, Teacher, Friend">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="severity">Severity Level</label>
+                        <select id="severity">
+                            <option value="mild">Mild (Minor issue)</option>
+                            <option value="medium" selected>Medium (Moderate issue)</option>
+                            <option value="serious">Serious (Major issue)</option>
+                            <option value="extreme">Extreme (Emergency)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Additional Details (Optional)</label>
+                        <textarea id="details" rows="3" placeholder="Add any specific details you'd like to include..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Excuse Style</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="style" value="formal" checked> Formal
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="style" value="apologetic"> Apologetic
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="style" value="humorous"> Humorous
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="style" value="detailed"> Detailed
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="style" value="concise"> Concise
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="generateBtn">
+                        <span class="spinner" id="spinner" style="display: none;"></span>
+                        Generate Excuse
+                    </button>
+                </form>
+                
+                <div class="result-container" id="resultContainer" style="display: none;">
+                    <h3>Your Perfect Excuse:</h3>
+                    <div class="excuse-result" id="excuseResult"></div>
+                    <div class="action-buttons">
+                        <button class="btn" id="copyBtn">
+                            <i class="fas fa-copy"></i> Copy to Clipboard
+                        </button>
+                        <button class="btn btn-secondary" id="newExcuseBtn">
+                            <i class="fas fa-sync-alt"></i> Generate New
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <aside class="ad-section">
+                <div class="ad-container">
+                    <!-- Google AdSense Ad Unit -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                     crossorigin="anonymous"></script>
+                    <!-- ExcuseGen Sidebar Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                
+                <div class="ad-container">
+                    <!-- Second Ad Unit -->
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+                     crossorigin="anonymous"></script>
+                    <!-- ExcuseGen Sidebar Ad 2 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                         data-ad-slot="YOUR_AD_SLOT_ID_2"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </aside>
+        </div>
+        
+        <section id="features" class="features-section">
+            <h2>Why Choose Our Excuse Generator?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Generate perfect excuses in seconds, saving you time and mental energy for more important things.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Highly Customizable</h3>
+                    <p>Tailor your excuses with multiple parameters to get exactly the right tone and content.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Believable</h3>
+                    <p>Our AI-powered system creates excuses that sound authentic and convincing.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="ad-container" style="margin: 30px 0;">
+            <!-- Horizontal Ad Unit -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+             crossorigin="anonymous"></script>
+            <!-- ExcuseGen Horizontal Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+                 data-ad-slot="YOUR_HORIZONTAL_AD_SLOT"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ExcuseGen</h3>
+                    <p>The smartest excuse generator on the web, helping people since 2023.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#generator">Generator</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@excusegen.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Excuse St, Suite 100</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 ExcuseGen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('show');
+        });
+        
+        // Excuse database
+        const excuseDatabase = {
+            work: {
+                mild: [
+                    "I'm experiencing some unexpected personal matters that require my immediate attention today.",
+                    "I've been dealing with a minor technical issue that's preventing me from completing my work on time.",
+                    "I need to attend to an urgent but non-critical family matter this morning."
+                ],
+                medium: [
+                    "I'm sorry, but I've come down with a sudden illness and won't be able to come in today. I should be better by tomorrow.",
+                    "There's been an unexpected issue with my childcare arrangements, so I'll need to work from home today.",
+                    "My car won't start this morning, and I'm waiting for roadside assistance. I'll be in as soon as I can."
+                ],
+                serious: [
+                    "I'm currently at the emergency room with a family member. I'll keep you updated, but I won't be able to work today.",
+                    "There's been a serious family emergency that requires my immediate and full attention for the next few days.",
+                    "I've been advised by my doctor to take immediate medical leave due to a developing health condition."
+                ],
+                extreme: [
+                    "I'm currently in the hospital following an accident. I'll provide more details when I'm able, but I'll be out for the foreseeable future.",
+                    "There's been a death in my immediate family. I'll need to take bereavement leave for the next week.",
+                    "I've been diagnosed with a contagious illness and have been ordered to quarantine for the next 14 days."
+                ]
+            },
+            school: {
+                mild: [
+                    "I wasn't able to complete the assignment on time due to unexpected technical difficulties with my computer.",
+                    "I need to request a brief extension as I've been dealing with some minor health issues that affected my productivity.",
+                    "I misunderstood the deadline for this assignment and need an extra day to complete it properly."
+                ],
+                medium: [
+                    "I've come down with the flu and won't be able to attend class today. Could you please send me any materials I'll miss?",
+                    "There's been a family emergency that requires my attention today. I'll make up any missed work as soon as possible.",
+                    "My laptop crashed and I lost several hours of work on the project. I'll need an extension to redo the lost portions."
+                ],
+                serious: [
+                    "I'm dealing with a significant personal crisis that's making it impossible for me to focus on schoolwork right now.",
+                    "I've been hospitalized unexpectedly and will need to miss classes for at least the rest of this week.",
+                    "A close family member has been diagnosed with a serious illness, and I need to help care for them immediately."
+                ],
+                extreme: [
+                    "I'm currently dealing with a family tragedy and will need to withdraw from classes this semester.",
+                    "I've been diagnosed with a serious medical condition that requires immediate treatment and hospitalization.",
+                    "There's been a death in my immediate family, and I'll need to take time off to attend to arrangements and grieve."
+                ]
+            },
+            personal: {
+                mild: [
+                    "Something unexpected came up, and I won't be able to make it today. Can we reschedule?",
+                    "I'm not feeling my best today and think I should take it easy. Let's catch up another time.",
+                    "I've got some last-minute responsibilities to take care of. Sorry for the late notice!"
+                ],
+                medium: [
+                    "I'm really sorry, but I have to cancel our plans. There's been a family issue I need to attend to.",
+                    "I've come down with a bad cold and don't want to get anyone sick. Let's postpone our get-together.",
+                    "My car broke down unexpectedly, and I won't be able to make it today."
+                ],
+                serious: [
+                    "I'm dealing with a family emergency and need to cancel all my plans for the next few days.",
+                    "I've been advised to quarantine due to possible exposure to illness. I won't be able to meet as planned.",
+                    "There's been a serious incident that requires my immediate attention. I'll explain more when I can."
+                ],
+                extreme: [
+                    "I'm currently at the hospital with a family member who's had a medical emergency. I'll need to cancel all plans indefinitely.",
+                    "There's been a death in the family, and I need to focus on arrangements and grieving.",
+                    "I've been in an accident and will be recovering for the foreseeable future."
+                ]
+            },
+            technical: {
+                mild: [
+                    "I'm experiencing some internet connectivity issues that are slowing down my work.",
+                    "My computer is running unusually slow today due to some technical problems I'm troubleshooting.",
+                    "There's a minor software issue that's preventing me from completing this task as quickly as I'd hoped."
+                ],
+                medium: [
+                    "My laptop crashed and I lost several hours of work. I'll need some time to recover what I can.",
+                    "There's been a power outage in my area that's disrupted my work for most of the day.",
+                    "I'm dealing with a serious software compatibility issue that's preventing me from accessing important files."
+                ],
+                serious: [
+                    "My primary computer has completely failed, and I'm waiting on repairs or a replacement.",
+                    "There's been a major internet outage in my area, and the provider says it may take days to restore service.",
+                    "I've been the victim of a cyberattack that's compromised my ability to work effectively."
+                ],
+                extreme: [
+                    "My home office was damaged in a flood/fire, destroying all my equipment and work materials.",
+                    "I've experienced a complete data loss due to hardware failure with no available backups.",
+                    "My entire digital workspace has been compromised by malware, requiring complete system rebuilding."
+                ]
+            },
+            health: {
+                mild: [
+                    "I'm not feeling 100% today and think I should take it easy to recover.",
+                    "I've developed a minor but uncomfortable condition that's making it hard to focus.",
+                    "My doctor has advised me to take today off to rest and recover."
+                ],
+                medium: [
+                    "I've come down with a bad cold/flu and need to stay home to recover and avoid spreading it.",
+                    "I'm experiencing severe migraines that make it impossible to work effectively today.",
+                    "I've injured myself (sprain, minor fracture) and need to rest it for proper healing."
+                ],
+                serious: [
+                    "I've been diagnosed with a contagious illness and need to quarantine for everyone's safety.",
+                    "I'm experiencing severe symptoms that require hospitalization for proper treatment.",
+                    "A chronic condition has flared up severely, requiring immediate medical attention."
+                ],
+                extreme: [
+                    "I've been hospitalized due to a serious medical emergency and will be out indefinitely.",
+                    "I've been diagnosed with a serious illness that requires immediate and intensive treatment.",
+                    "I've been in an accident and sustained injuries that require hospitalization and recovery time."
+                ]
+            },
+            transport: {
+                mild: [
+                    "My car is having minor issues this morning, so I'll be running a bit late.",
+                    "There's unexpected traffic/transit delays that are slowing me down.",
+                    "I'm having trouble finding parking, so I might be a few minutes late."
+                ],
+                medium: [
+                    "My car won't start this morning, and I'm waiting for a tow truck. I'll update you when I know more.",
+                    "There's been a major accident on my route, creating significant delays.",
+                    "Public transit is experiencing major disruptions today, significantly impacting my commute."
+                ],
+                serious: [
+                    "My car was involved in a minor accident this morning. Everyone's okay, but I'll be delayed dealing with the aftermath.",
+                    "All flights out of my location have been cancelled due to weather. I'm working on alternative arrangements.",
+                    "There's been a complete transportation shutdown in my area due to unforeseen circumstances."
+                ],
+                extreme: [
+                    "I've been in a car accident and am currently at the hospital being evaluated.",
+                    "All transportation options have been suspended due to a natural disaster/emergency.",
+                    "My vehicle was totaled in an accident, and I'm currently without transportation."
+                ]
+            }
+        };
+        
+        // Style modifiers
+        const styleModifiers = {
+            formal: (excuse) => {
+                return excuse.replace(/I'm/g, "I am")
+                           .replace(/I've/g, "I have")
+                           .replace(/won't/g, "will not")
+                           .replace(/can't/g, "cannot")
+                           .replace(/don't/g, "do not");
+            },
+            apologetic: (excuse) => {
+                return "I sincerely apologize, but " + excuse.toLowerCase();
+            },
+            humorous: (excuse) => {
+                const humorousAddons = [
+                    " I swear it's not just because I wanted to binge-watch my favorite show.",
+                    " I know, I know - worst timing ever!",
+                    " I promise I'm not making this up!",
+                    " I wish I was kidding about this.",
+                    " Because apparently the universe thought today would be a good day to test me."
+                ];
+                return excuse + humorousAddons[Math.floor(Math.random() * humorousAddons.length)];
+            },
+            detailed: (excuse) => {
+                const details = [
+                    " The issue started developing yesterday evening and has progressively gotten worse.",
+                    " I've already tried troubleshooting the problem but haven't had any success yet.",
+                    " This situation came completely unexpectedly, and I'm doing everything I can to resolve it quickly.",
+                    " I've consulted with professionals who confirm this is a legitimate issue.",
+                    " I have documentation to support this claim if needed."
+                ];
+                return excuse + details[Math.floor(Math.random() * details.length)];
+            },
+            concise: (excuse) => {
+                // Make the excuse shorter
+                return excuse.split(/[,.]/)[0] + ".";
+            }
+        };
+        
+        // Form submission
+        document.getElementById('excuseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading spinner
+            const spinner = document.getElementById('spinner');
+            const generateBtn = document.getElementById('generateBtn');
+            spinner.style.display = 'inline-block';
+            generateBtn.disabled = true;
+            
+            // Get form values
+            const excuseType = document.getElementById('excuseType').value;
+            const recipient = document.getElementById('recipient').value;
+            const severity = document.getElementById('severity').value;
+            const details = document.getElementById('details').value;
+            
+            // Get selected styles
+            const styleCheckboxes = document.querySelectorAll('input[name="style"]:checked');
+            const styles = Array.from(styleCheckboxes).map(cb => cb.value);
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Generate excuse
+                let excuse = generateExcuse(excuseType, severity, recipient, details, styles);
+                
+                // Display result
+                document.getElementById('excuseResult').textContent = excuse;
+                document.getElementById('resultContainer').style.display = 'block';
+                
+                // Scroll to result
+                document.getElementById('resultContainer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Hide spinner
+                spinner.style.display = 'none';
+                generateBtn.disabled = false;
+            }, 800);
+        });
+        
+        // Generate new excuse
+        document.getElementById('newExcuseBtn').addEventListener('click', function() {
+            // Get form values again
+            const excuseType = document.getElementById('excuseType').value;
+            const recipient = document.getElementById('recipient').value;
+            const severity = document.getElementById('severity').value;
+            const details = document.getElementById('details').value;
+            
+            // Get selected styles
+            const styleCheckboxes = document.querySelectorAll('input[name="style"]:checked');
+            const styles = Array.from(styleCheckboxes).map(cb => cb.value);
+            
+            // Generate new excuse
+            let excuse = generateExcuse(excuseType, severity, recipient, details, styles);
+            
+            // Display new result with animation
+            const resultElement = document.getElementById('excuseResult');
+            resultElement.classList.remove('fade-in');
+            void resultElement.offsetWidth; // Trigger reflow
+            resultElement.textContent = excuse;
+            resultElement.classList.add('fade-in');
+        });
+        
+        // Copy to clipboard
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            const excuseText = document.getElementById('excuseResult').textContent;
+            navigator.clipboard.writeText(excuseText).then(() => {
+                const originalText = this.innerHTML;
+                this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                }, 2000);
+            });
+        });
+        
+        // Excuse generation function
+        function generateExcuse(type, severity, recipient, details, styles) {
+            // Get random excuse from database
+            const excuses = excuseDatabase[type][severity];
+            let excuse = excuses[Math.floor(Math.random() * excuses.length)];
+            
+            // Add recipient if specified
+            if (recipient) {
+                excuse = excuse.replace(/I'm/g, `Dear ${recipient}, I'm`)
+                              .replace(/I've/g, `Dear ${recipient}, I've`);
+                
+                if (!excuse.includes('Dear')) {
+                    excuse = `Dear ${recipient}, ${excuse.toLowerCase()}`;
+                }
+            }
+            
+            // Add details if specified
+            if (details) {
+                excuse += ` Specifically, ${details.toLowerCase()}`;
+            }
+            
+            // Apply style modifications
+            styles.forEach(style => {
+                if (styleModifiers[style]) {
+                    excuse = styleModifiers[style](excuse);
+                }
+            });
+            
+            return excuse;
+        }
+        
+        // Initialize AdSense
+        function initAdSense() {
+            // You can add any AdSense initialization code here if needed
+            console.log('AdSense initialized');
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initAdSense();
+        });
+    </script>
+    
+    <!-- Structured data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Smart Excuse Generator",
+      "url": "https://yourexcusegenerator.com",
+      "description": "Generate perfect excuses for any situation with our AI-powered excuse generator.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "ExcuseGen"
+      }
+    }
+    </script>
+</body>
+</html>
